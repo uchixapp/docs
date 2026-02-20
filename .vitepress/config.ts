@@ -5,6 +5,7 @@ export default defineConfig({
   description: 'Документация UchiX — космический помощник по решению заданий на Учи.ру и SkySmart',
   lang: 'ru-RU',
   appearance: 'force-dark',
+  srcExclude: ['**/AGENTS.md'],
 
   sitemap: {
     hostname: 'https://docs.uchix.app',
