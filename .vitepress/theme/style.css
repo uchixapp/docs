@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700;800;900&family=Onest:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* cosmic palette */
+  --cosmic-900: #0a0512;
+  --cosmic-800: #120a1f;
+  --cosmic-700: #1a0a2e;
+  --cosmic-600: #2a1447;
+  --cosmic-500: #3d1f66;
+
+  --nebula-500: #7c3aed;
+  --nebula-400: #a855f7;
+  --nebula-300: #c084fc;
+
+  --plasma-500: #e91e63;
+  --plasma-400: #f472b6;
+  --plasma-300: #f9a8d4;
+
+  --stellar-500: #00d4ff;
+  --stellar-400: #22d3ee;
+  --stellar-300: #67e8f9;
+
+  --solar-500: #ff6b35;
+  --solar-400: #fb923c;
+  --solar-300: #fdba74;
+}
+
+/* vitepress dark theme overrides */
+.dark {
+  --vp-c-bg: var(--cosmic-900);
+  --vp-c-bg-alt: var(--cosmic-800);
+  --vp-c-bg-elv: var(--cosmic-700);
+  --vp-c-bg-soft: var(--cosmic-800);
+
+  --vp-c-brand-1: var(--nebula-400);
+  --vp-c-brand-2: var(--nebula-500);
+  --vp-c-brand-3: var(--nebula-300);
+  --vp-c-brand-soft: rgba(124, 58, 237, 0.14);
+
+  --vp-c-tip-1: var(--stellar-400);
+  --vp-c-tip-2: var(--stellar-500);
+  --vp-c-tip-3: var(--stellar-300);
+  --vp-c-tip-soft: rgba(0, 212, 255, 0.14);
+
+  --vp-c-warning-1: var(--solar-400);
+  --vp-c-warning-2: var(--solar-500);
+  --vp-c-warning-3: var(--solar-300);
+  --vp-c-warning-soft: rgba(255, 107, 53, 0.14);
+
+  --vp-c-danger-1: var(--plasma-400);
+  --vp-c-danger-2: var(--plasma-500);
+  --vp-c-danger-3: var(--plasma-300);
+  --vp-c-danger-soft: rgba(233, 30, 99, 0.14);
+
+  --vp-c-text-1: #e2e8f0;
+  --vp-c-text-2: rgba(226, 232, 240, 0.78);
+  --vp-c-text-3: rgba(226, 232, 240, 0.56);
+
+  --vp-c-divider: rgba(255, 255, 255, 0.08);
+  --vp-c-gutter: var(--cosmic-800);
+
+  --vp-nav-bg-color: rgba(10, 5, 18, 0.85);
+  --vp-sidebar-bg-color: var(--cosmic-900);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, var(--stellar-400), var(--nebula-400), var(--plasma-400));
+  --vp-home-hero-image-background-image: linear-gradient(135deg, rgba(124, 58, 237, 0.4), rgba(0, 212, 255, 0.3));
+  --vp-home-hero-image-filter: blur(56px);
+
+  --vp-button-brand-bg: var(--nebula-500);
+  --vp-button-brand-hover-bg: var(--nebula-400);
+  --vp-button-brand-active-bg: var(--nebula-500);
+  --vp-button-brand-text: #fff;
+
+  --vp-button-alt-bg: var(--cosmic-600);
+  --vp-button-alt-hover-bg: var(--cosmic-500);
+  --vp-button-alt-text: #e2e8f0;
+}
+
+/* force dark mode */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* typography */
+:root {
+  --vp-font-family-base: 'Onest', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', monospace;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4 {
+  font-family: 'Unbounded', sans-serif;
+}
+
+.VPHero .name {
+  font-family: 'Unbounded', sans-serif !important;
+}
+
+/* nav glassmorphism */
+.VPNav {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* sidebar glow on active */
+.VPSidebar .is-active > .link > .text {
+  text-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cosmic-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--nebula-500), var(--plasma-500));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--nebula-400), var(--plasma-400));
+}
+
+/* selection */
+::selection {
+  background: rgba(124, 58, 237, 0.4);
+  color: white;
+}
+
+/* custom container tweaks */
+.vp-doc .custom-block {
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+/* images in docs */
+.vp-doc img {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 16px 0;
+}
+
+/* link button styling */
+.vp-doc .action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, var(--nebula-500), var(--plasma-500));
+  color: #fff !important;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+}
+
+.vp-doc .action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.5);
+}
+
+/* side-by-side layout */
+.side-by-side {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.side-by-side > div {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* tab styles */
+.tabs {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 16px 0;
+  background: rgba(18, 10, 31, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.tabs .tab-buttons {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(26, 10, 46, 0.4);
+}
+
+.tabs .tab-buttons button {
+  flex: 1;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  color: rgba(226, 232, 240, 0.56);
+  cursor: pointer;
+  font-family: 'Onest', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.tabs .tab-buttons button.active {
+  color: var(--nebula-400);
+  border-bottom: 2px solid var(--nebula-400);
+  background: rgba(124, 58, 237, 0.08);
+}
+
+.tabs .tab-buttons button:hover:not(.active) {
+  color: rgba(226, 232, 240, 0.78);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tabs .tab-content {
+  padding: 20px;
+}
+
+/* feature cards for home page */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.feature-card {
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(26, 10, 46, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
