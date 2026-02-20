@@ -2,9 +2,13 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'UchiX',
-  description: 'документация UchiX — космический помощник по решению заданий',
+  description: 'Документация UchiX — космический помощник по решению заданий на Учи.ру и SkySmart',
   lang: 'ru-RU',
   appearance: 'force-dark',
+
+  sitemap: {
+    hostname: 'https://docs.uchix.app',
+  },
 
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
@@ -17,6 +21,33 @@ export default defineConfig({
         href: 'https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700;800;900&family=Onest:wght@300;400;500;600;700&display=swap',
       },
     ],
+    ['meta', { name: 'keywords', content: 'uchix документация, учи ру ответы, skysmart ответы, uchix расширение, космо-коины, установка uchix' }],
+    ['meta', { name: 'author', content: 'UchiX' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:locale', content: 'ru_RU' }],
+    ['meta', { property: 'og:site_name', content: 'UchiX Документация' }],
+    ['meta', { property: 'og:image', content: 'https://docs.uchix.app/logo.png' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: 'https://docs.uchix.app/logo.png' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { name: 'theme-color', content: '#0a0512' }],
+    [
+      'script',
+      { type: 'application/ld+json' },
+      JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'UchiX Документация',
+        url: 'https://docs.uchix.app',
+        description: 'Документация расширения UchiX — помощник по решению заданий на Учи.ру и SkySmart',
+        publisher: {
+          '@type': 'Organization',
+          name: 'UchiX',
+          url: 'https://uchix.app',
+          logo: { '@type': 'ImageObject', url: 'https://docs.uchix.app/logo.png' },
+        },
+      }),
+    ],
   ],
 
   themeConfig: {
@@ -24,50 +55,50 @@ export default defineConfig({
     siteTitle: 'UchiX',
 
     nav: [
-      { text: 'наш сайт', link: 'https://uchix.app' },
-      { text: 'telegram-канал', link: 'https://t.me/uchirux' },
-      { text: 'telegram-бот', link: 'https://t.me/uchixbot' },
+      { text: 'Наш сайт', link: 'https://uchix.app' },
+      { text: 'Telegram-канал', link: 'https://t.me/uchirux' },
+      { text: 'Telegram-бот', link: 'https://t.me/uchixbot' },
     ],
 
     sidebar: [
       {
-        text: 'руководства',
+        text: 'Руководства',
         collapsed: false,
         items: [
-          { text: 'установка расширения', link: '/guides/install' },
-          { text: 'использование расширения', link: '/guides/how-to-use' },
-          { text: 'как получить космо-коины', link: '/guides/how-to-get-coins' },
+          { text: 'Установка расширения', link: '/guides/install' },
+          { text: 'Использование расширения', link: '/guides/how-to-use' },
+          { text: 'Как получить космо-коины', link: '/guides/how-to-get-coins' },
         ],
       },
-      { text: 'правила использования', link: '/rules' },
-      { text: 'решение проблем', link: '/troubleshooting' },
+      { text: 'Правила использования', link: '/rules' },
+      { text: 'Решение проблем', link: '/troubleshooting' },
     ],
 
     outline: {
-      label: 'на этой странице',
+      label: 'На этой странице',
     },
 
     docFooter: {
-      prev: 'предыдущая',
-      next: 'следующая',
+      prev: 'Предыдущая',
+      next: 'Следующая',
     },
 
-    sidebarMenuLabel: 'меню',
-    returnToTopLabel: 'наверх',
+    sidebarMenuLabel: 'Меню',
+    returnToTopLabel: 'Наверх',
 
     footer: {
-      copyright: '© команда UchiX, 2024-2026',
+      copyright: '© Команда UchiX, 2024-2026',
     },
 
     search: {
       provider: 'local',
       options: {
         translations: {
-          button: { buttonText: 'поиск', buttonAriaLabel: 'поиск' },
+          button: { buttonText: 'Поиск', buttonAriaLabel: 'Поиск' },
           modal: {
-            noResultsText: 'ничего не найдено',
-            resetButtonTitle: 'сбросить',
-            footer: { selectText: 'выбрать', navigateText: 'навигация', closeText: 'закрыть' },
+            noResultsText: 'Ничего не найдено',
+            resetButtonTitle: 'Сбросить',
+            footer: { selectText: 'Выбрать', navigateText: 'Навигация', closeText: 'Закрыть' },
           },
         },
       },
